@@ -4,16 +4,10 @@ function [attack_base_sig] = extraction_attack_base(before_anc_sig)
 % 截止频率: (15-8)/48 
 % 通带频率:(15-4)/48 
 d = fdesign.highpass('Fst,Fp,Ast,Ap',7/48,11/48,60,1);   % 提取和防御信息卷积后的一次攻击信号
-d1 = fdesign.highpass('Fst,Fp,Ast,Ap',17/48,21/48,60,1); 
-
 % d = fdesign.highpass('Fst,Fp,Ast,Ap',4/48,7.5/48,60,1);
 Hd=design(d,'butter');
-Hd1=design(d1,'butter');
-
-
 attack_base_sig=filter(Hd,before_anc_sig);
-attack_base_sig1=filter(Hd1,before_anc_sig);
-attack_base_sig=attack_base_sig-attack_base_sig1;
+
 
 % Wp = 11/48;
 % Ws = 7/48;

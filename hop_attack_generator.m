@@ -1,7 +1,7 @@
 function [attack_mod_reshaped_sig] = hop_attack_generator()
 clear all;clc;
 upsample_fs = 96000;
-[sampledata1,FS] = audioread('camera4.m4a');
+[sampledata1,FS] = audioread('Alex.m4a');
 % % % % 读攻击信号
 % % % % 选择是否对攻击信号进行限带处理，这里控制单边频带宽度低于4K
 d = fdesign.lowpass('Fp,Fst,Ap,Ast',4000/FS*2,8000/FS*2,1,60);
@@ -31,10 +31,10 @@ attack_premod_sig = attack_upsample_sig + 1;
 
 % modulation
 frenumber=3;                       %跳频频点个数
-hopbw=5000;                       %频点间隔
+hopbw=2500;                       %频点间隔
 hopnumber=10;                      %跳频次数
 fs = 96000;                       %升采样率
-hopfrequency=[25000:hopbw:(25000+hopbw*(frenumber-1))];         %调频频率
+hopfrequency=[30000:hopbw:(30000+hopbw*(frenumber-1))];         %调频频率
 hoplength=length/10;
 attack_reshape_sig=reshape(attack_premod_sig,hoplength,10);
 attack_reshape_sig=attack_reshape_sig';

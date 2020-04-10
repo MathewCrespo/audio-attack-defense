@@ -37,7 +37,7 @@ for k = 1:NIter
 d = fdesign.lowpass('Fp,Fst,Ap,Ast',4/48,8/48,1,60);
 Hd=design(d,'butter');
 after_anc=filter(Hd,after_anc);
-audiowrite('2th_anc.m4a',after_anc,48000);
+%audiowrite('2th_anc.m4a',after_anc,48000);
 
 %%N = size(after_anc,1);
 %%after_anc_fft = abs(fft(after_anc))/N*2;

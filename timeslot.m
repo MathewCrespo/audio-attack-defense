@@ -63,8 +63,8 @@ subplot(212),plot(t,error_anc);
 xlabel("t/s");
 title("error anc sig ")
 saveas(gcf,'error anc sig.pdf');
-audiowrite('1th_anc.m4a',error_anc,48000);
-audiowrite('mix.m4a',mix_base_sig,48000);
+%audiowrite('1th_anc.m4a',error_anc,48000);
+%audiowrite('mix.m4a',mix_base_sig,48000);
 
 end
 

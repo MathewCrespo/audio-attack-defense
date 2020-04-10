@@ -24,6 +24,6 @@ title("低通截止之后的信号时域图")
 saveas(gcf,'before_anc.pdf');
 a = resample(before_anc_sig,mic_fs,upsample_fs);
 
-audiowrite('zzh.m4a',a,mic_fs);
+%audiowrite('zzh.m4a',a,mic_fs);
 end
 
